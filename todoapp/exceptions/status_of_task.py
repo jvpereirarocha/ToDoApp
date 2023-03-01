@@ -1,9 +1,10 @@
+
 from dataclasses import dataclass
 
 from todoapp.exceptions.base import ExceptionOfTodoApp
 
 
 @dataclass
-class TaskAlreadyFinished(ExceptionOfTodoApp):
-    detail = "Task already finished"
+class InvalidStatusOfTask(ExceptionOfTodoApp):
+    detail = "This status is not valid"
     status_code = 400
