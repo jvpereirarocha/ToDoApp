@@ -9,5 +9,5 @@ if __name__ == "__main__":
 
     debug = app.config.get("DEBUG")
     port = app.config.get("PORT")
-    
+
     app.run(debug=debug, port=port)

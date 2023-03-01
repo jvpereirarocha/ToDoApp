@@ -8,9 +8,7 @@ from todoapp.object_values.status_of_tasks import StatusOfTask
 
 def test_create_new_task():
     description_of_task = "Learn English"
-    task = TasksToDo.new_task(
-        description=description_of_task
-    )
+    task = TasksToDo.new_task(description=description_of_task)
 
     assert task.status == StatusOfTask.NEW
     assert task.finished is False
@@ -25,7 +23,7 @@ def test_update_task_status(mock_task_todo):
     )
     assert task.finished is False
     assert task.finished_at is None
-    
+
     task.update_task_status(status=StatusOfTask.TODO)
     assert task.finished is False
     assert task.status == StatusOfTask.TODO

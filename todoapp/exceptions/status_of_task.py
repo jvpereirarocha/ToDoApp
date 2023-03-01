@@ -1,4 +1,3 @@
-
 from dataclasses import dataclass
 
 from todoapp.exceptions.base import ExceptionOfTodoApp

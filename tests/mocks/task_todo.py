@@ -13,7 +13,7 @@ def mock_task_todo():
         status: StatusOfTask,
         created_at: datetime,
         finished: bool,
-        finished_at: Optional[datetime] = None
+        finished_at: Optional[datetime] = None,
     ):
         new_task = TasksToDo(
             task_id=uuid4().hex,
@@ -21,9 +21,9 @@ def mock_task_todo():
             status=status,
             created_at=created_at,
             finished=finished,
-            finished_at=finished_at
+            finished_at=finished_at,
         )
 
         return new_task
-    
+
     return _make_new_mock

@@ -35,17 +35,15 @@ class TasksToDo:
             description=description,
             created_at=datetime.now(),
             status=StatusOfTask.NEW,
-            finished=False
+            finished=False,
         )
-    
-    
+
     def update_task_status(self, status: StatusOfTask):
         if status not in self.valid_status:
             raise InvalidStatusOfTask(
-                detail="This status is not valid",
-                status_code=400
+                detail="This status is not valid", status_code=400
             )
-        
+
         self.status = status
 
     def finish_task(self):
