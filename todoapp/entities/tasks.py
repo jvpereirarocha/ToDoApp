@@ -1,7 +1,8 @@
 from dataclasses import dataclass
 from datetime import datetime
 from typing import List, Optional
-from uuid import uuid4, UUID
+from uuid import UUID, uuid4
+
 from todoapp.exceptions.status_of_task import InvalidStatusOfTask
 from todoapp.exceptions.tasks import TaskAlreadyFinished
 from todoapp.object_values.status_of_tasks import StatusOfTask

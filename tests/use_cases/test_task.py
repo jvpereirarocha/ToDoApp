@@ -1,8 +1,10 @@
-from pytest import raises
 from datetime import datetime
+
+from pytest import raises
+
 from todoapp.entities.tasks import TasksToDo
-from todoapp.exceptions.tasks import TaskAlreadyFinished
 from todoapp.exceptions.status_of_task import InvalidStatusOfTask
+from todoapp.exceptions.tasks import TaskAlreadyFinished
 from todoapp.object_values.status_of_tasks import StatusOfTask
 
 

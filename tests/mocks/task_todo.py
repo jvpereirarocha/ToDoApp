@@ -1,7 +1,9 @@
 from datetime import datetime
 from typing import Optional
 from uuid import UUID, uuid4
+
 from pytest import fixture
+
 from todoapp.entities.tasks import TasksToDo
 from todoapp.object_values.status_of_tasks import StatusOfTask
 
