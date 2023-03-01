@@ -68,3 +68,16 @@ def test_invalid_status_of_task(mock_task_todo):
         task.update_task_status(status="hello")
         exc.detail == "This status is not valid"
         exc.status_code == 400
+
+
+def test_delete_a_task(mock_task_todo):
+    task: TasksToDo = mock_task_todo(
+        description="Watch TV",
+        status=StatusOfTask.NEW,
+        created_at=datetime.now(),
+        finished=False,
+    )
+
+    assert task.deleted is False
+    task.delete_task()
+    assert task.deleted is True
