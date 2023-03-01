@@ -2,6 +2,7 @@ from pytest import raises
 from datetime import datetime
 from todoapp.entities.tasks import TasksToDo
 from todoapp.exceptions.tasks import TaskAlreadyFinished
+from todoapp.exceptions.status_of_task import InvalidStatusOfTask
 from todoapp.object_values.status_of_tasks import StatusOfTask
 
 
@@ -52,4 +53,18 @@ def test_raise_exception_when_task_is_already_finished(mock_task_todo):
     with raises(TaskAlreadyFinished) as exc:
         task.finish_task()
         exc.detail == "Task already finished"
+        exc.status_code == 400
+
+
+def test_invalid_status_of_task(mock_task_todo):
+    task: TasksToDo = mock_task_todo(
+        description="Play videogame",
+        status=StatusOfTask.DONE,
+        created_at=datetime.now(),
+        finished=True,
+    )
+
+    with raises(InvalidStatusOfTask) as exc:
+        task.update_task_status(status="hello")
+        exc.detail == "This status is not valid"
         exc.status_code == 400
