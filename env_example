@@ -1,0 +1,2 @@
+FLASK_ENV=your env (production or development)
+FLASK_APP=app.factory:create_app('${FLASK_ENV}')
