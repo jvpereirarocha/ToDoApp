@@ -15,6 +15,7 @@ class TasksToDo:
     created_at: datetime
     finished: bool = False
     finished_at: Optional[datetime] = None
+    deleted: bool = False
 
     @property
     def valid_status(self) -> List[StatusOfTask]:
@@ -53,3 +54,6 @@ class TasksToDo:
         self.finished = True
         self.status = StatusOfTask.DONE
         self.finished_at = datetime.now()
+
+    def delete_task(self):
+        self.deleted = True
